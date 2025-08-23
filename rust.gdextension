@@ -1,0 +1,13 @@
+[configuration]
+entry_symbol = "gdext_rust_init"
+compatibility_minimum = 4.1
+
+[libraries]
+linux.debug.x86_64 = "res://rust/target/debug/libmy_game.so"
+linux.release.x86_64 = "res://rust/target/release/libmy_game.so"
+windows.debug.x86_64 = "res://rust/target/debug/my_game.dll"
+windows.release.x86_64 = "res://rust/target/release/my_game.dll"
+macos.debug = "res://rust/target/debug/libmy_game.dylib"
+macos.release = "res://rust/target/release/libmy_game.dylib"
+macos.debug.arm64 = "res://rust/target/debug/libmy_game.dylib"
+macos.release.arm64 = "res://rust/target/release/libmy_game.dylib"
