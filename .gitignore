@@ -2,3 +2,5 @@
 .godot/
 /android/
 rust/target
+solver.apk
+solver.apk.idsig

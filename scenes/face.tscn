@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://1fcncuftqecm"]
+
+[ext_resource type="Script" uid="uid://cts4c8rabog2k" path="res://scripts/face.gd" id="1_3alo4"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_r3fl7"]
+resource_local_to_scene = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ngt2y"]
+resource_local_to_scene = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_ngt2y"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_ngt2y")
+
+[node name="Face" type="Area3D"]
+script = ExtResource("1_3alo4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_r3fl7")
+
+[node name="Mesh" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_ngt2y")
+skeleton = NodePath("../..")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

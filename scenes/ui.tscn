@@ -1,0 +1,282 @@
+[gd_scene load_steps=9 format=3 uid="uid://bjk47yw7ramg3"]
+
+[ext_resource type="StyleBox" uid="uid://demgshf5bo6w0" path="res://resources/focus.tres" id="1_nltto"]
+[ext_resource type="StyleBox" uid="uid://crrhtawy3njd6" path="res://resources/disabled.tres" id="2_ibotj"]
+[ext_resource type="StyleBox" uid="uid://drt514gue373s" path="res://resources/normal.tres" id="3_n5ude"]
+[ext_resource type="StyleBox" uid="uid://byy1xix8g23a2" path="res://resources/pressed.tres" id="4_y4yjw"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_r3fl7"]
+blend_mode = 4
+
+[sub_resource type="Theme" id="Theme_a0tk4"]
+default_font_size = 60
+
+[sub_resource type="SystemFont" id="SystemFont_r3fl7"]
+subpixel_positioning = 0
+
+[sub_resource type="Theme" id="Theme_jka67"]
+default_font = SubResource("SystemFont_r3fl7")
+default_font_size = 60
+
+[node name="Control" type="Control"]
+material = SubResource("CanvasItemMaterial_r3fl7")
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 8.0
+mouse_filter = 1
+theme = SubResource("Theme_a0tk4")
+
+[node name="UI" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Header" type="VBoxContainer" parent="UI"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/Header"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Colors" type="HBoxContainer" parent="UI/Header"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer3" type="MarginContainer" parent="UI/Header/Colors"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Up" type="VBoxContainer" parent="UI/Header/Colors"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="UI/Header/Colors/Up"]
+layout_mode = 2
+size_flags_vertical = 6
+theme = SubResource("Theme_jka67")
+text = "0"
+horizontal_alignment = 1
+
+[node name="Button6" type="Button" parent="UI/Header/Colors/Up"]
+z_index = 1
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/focus = ExtResource("1_nltto")
+theme_override_styles/disabled = ExtResource("2_ibotj")
+theme_override_styles/hover = ExtResource("3_n5ude")
+theme_override_styles/pressed = ExtResource("4_y4yjw")
+theme_override_styles/normal = ExtResource("3_n5ude")
+
+[node name="ColorRect" type="ColorRect" parent="UI/Header/Colors/Up/Button6"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="Right" type="VBoxContainer" parent="UI/Header/Colors"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="UI/Header/Colors/Right"]
+layout_mode = 2
+size_flags_vertical = 6
+theme = SubResource("Theme_jka67")
+text = "0"
+horizontal_alignment = 1
+
+[node name="Button6" type="Button" parent="UI/Header/Colors/Right"]
+z_index = 1
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/focus = ExtResource("1_nltto")
+theme_override_styles/disabled = ExtResource("2_ibotj")
+theme_override_styles/hover = ExtResource("3_n5ude")
+theme_override_styles/pressed = ExtResource("4_y4yjw")
+theme_override_styles/normal = ExtResource("3_n5ude")
+
+[node name="ColorRect" type="ColorRect" parent="UI/Header/Colors/Right/Button6"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+color = Color(0, 0, 1, 1)
+
+[node name="Front" type="VBoxContainer" parent="UI/Header/Colors"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="UI/Header/Colors/Front"]
+layout_mode = 2
+size_flags_vertical = 6
+theme = SubResource("Theme_jka67")
+text = "0"
+horizontal_alignment = 1
+
+[node name="Button6" type="Button" parent="UI/Header/Colors/Front"]
+z_index = 1
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/focus = ExtResource("1_nltto")
+theme_override_styles/disabled = ExtResource("2_ibotj")
+theme_override_styles/hover = ExtResource("3_n5ude")
+theme_override_styles/pressed = ExtResource("4_y4yjw")
+theme_override_styles/normal = ExtResource("3_n5ude")
+
+[node name="ColorRect" type="ColorRect" parent="UI/Header/Colors/Front/Button6"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+color = Color(1, 0, 0, 1)
+
+[node name="Down" type="VBoxContainer" parent="UI/Header/Colors"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="UI/Header/Colors/Down"]
+layout_mode = 2
+size_flags_vertical = 6
+theme = SubResource("Theme_jka67")
+text = "0"
+horizontal_alignment = 1
+
+[node name="Button6" type="Button" parent="UI/Header/Colors/Down"]
+z_index = 1
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/focus = ExtResource("1_nltto")
+theme_override_styles/disabled = ExtResource("2_ibotj")
+theme_override_styles/hover = ExtResource("3_n5ude")
+theme_override_styles/pressed = ExtResource("4_y4yjw")
+theme_override_styles/normal = ExtResource("3_n5ude")
+
+[node name="ColorRect" type="ColorRect" parent="UI/Header/Colors/Down/Button6"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+color = Color(1, 1, 0, 1)
+
+[node name="Left" type="VBoxContainer" parent="UI/Header/Colors"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="UI/Header/Colors/Left"]
+layout_mode = 2
+size_flags_vertical = 6
+theme = SubResource("Theme_jka67")
+text = "0"
+horizontal_alignment = 1
+
+[node name="Button6" type="Button" parent="UI/Header/Colors/Left"]
+z_index = 1
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/focus = ExtResource("1_nltto")
+theme_override_styles/disabled = ExtResource("2_ibotj")
+theme_override_styles/hover = ExtResource("3_n5ude")
+theme_override_styles/pressed = ExtResource("4_y4yjw")
+theme_override_styles/normal = ExtResource("3_n5ude")
+
+[node name="ColorRect" type="ColorRect" parent="UI/Header/Colors/Left/Button6"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+color = Color(0, 0.501961, 0, 1)
+
+[node name="Back" type="VBoxContainer" parent="UI/Header/Colors"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="UI/Header/Colors/Back"]
+layout_mode = 2
+size_flags_vertical = 6
+theme = SubResource("Theme_jka67")
+text = "0"
+horizontal_alignment = 1
+
+[node name="Button6" type="Button" parent="UI/Header/Colors/Back"]
+z_index = 1
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/focus = ExtResource("1_nltto")
+theme_override_styles/disabled = ExtResource("2_ibotj")
+theme_override_styles/hover = ExtResource("3_n5ude")
+theme_override_styles/pressed = ExtResource("4_y4yjw")
+theme_override_styles/normal = ExtResource("3_n5ude")
+
+[node name="ColorRect" type="ColorRect" parent="UI/Header/Colors/Back/Button6"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+color = Color(1, 0.54902, 0, 1)
+
+[node name="MarginContainer4" type="MarginContainer" parent="UI/Header/Colors"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="MarginContainer2" type="MarginContainer" parent="UI"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer4" type="MarginContainer" parent="UI"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer3" type="MarginContainer" parent="UI"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="UI"]
+layout_mode = 2
+size_flags_vertical = 3
