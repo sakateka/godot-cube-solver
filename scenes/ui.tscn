@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://bjk47yw7ramg3"]
+[gd_scene load_steps=10 format=3 uid="uid://bjk47yw7ramg3"]
 
 [ext_resource type="StyleBox" uid="uid://demgshf5bo6w0" path="res://resources/focus.tres" id="1_nltto"]
 [ext_resource type="StyleBox" uid="uid://crrhtawy3njd6" path="res://resources/disabled.tres" id="2_ibotj"]
 [ext_resource type="StyleBox" uid="uid://drt514gue373s" path="res://resources/normal.tres" id="3_n5ude"]
 [ext_resource type="StyleBox" uid="uid://byy1xix8g23a2" path="res://resources/pressed.tres" id="4_y4yjw"]
+[ext_resource type="Script" uid="uid://bpjcfp483eyvm" path="res://scripts/btn_fix.gd" id="5_wm3ai"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_r3fl7"]
 blend_mode = 4
@@ -43,6 +44,7 @@ grow_vertical = 2
 [node name="Header" type="VBoxContainer" parent="UI"]
 layout_mode = 2
 size_flags_vertical = 3
+mouse_filter = 0
 
 [node name="MarginContainer" type="MarginContainer" parent="UI/Header"]
 layout_mode = 2
@@ -265,18 +267,124 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="MarginContainer2" type="MarginContainer" parent="UI"]
+[node name="MarginContainer2" type="MarginContainer" parent="UI/Header"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="MarginContainer4" type="MarginContainer" parent="UI"]
+[node name="CubeWindowMiddle" type="MarginContainer" parent="UI"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="MarginContainer3" type="MarginContainer" parent="UI"]
+[node name="CubeWindowDown" type="MarginContainer" parent="UI"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="MarginContainer" type="MarginContainer" parent="UI"]
+[node name="Footer" type="VBoxContainer" parent="UI"]
 layout_mode = 2
 size_flags_vertical = 3
+mouse_filter = 0
+
+[node name="MarginContainer4" type="MarginContainer" parent="UI/Footer"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="Controls" type="HBoxContainer" parent="UI/Footer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer2" type="MarginContainer" parent="UI/Footer/Controls"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="MarginContainer5" type="MarginContainer" parent="UI/Footer/Controls"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="MarginContainer3" type="MarginContainer" parent="UI/Footer/Controls"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="MarginContainer4" type="MarginContainer" parent="UI/Footer/Controls"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/Footer"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="Rotations" type="HBoxContainer" parent="UI/Footer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer2" type="MarginContainer" parent="UI/Footer/Rotations"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="MarginContainer5" type="MarginContainer" parent="UI/Footer/Rotations"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="MarginContainer3" type="MarginContainer" parent="UI/Footer/Rotations"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="MarginContainer4" type="MarginContainer" parent="UI/Footer/Rotations"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="MarginContainer2" type="MarginContainer" parent="UI/Footer"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="SolveControls" type="HBoxContainer" parent="UI/Footer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 20
+
+[node name="MarginContainer6" type="MarginContainer" parent="UI/Footer/SolveControls"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Prev" type="Button" parent="UI/Footer/SolveControls"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 30
+text = "Prev"
+script = ExtResource("5_wm3ai")
+
+[node name="Solve" type="Button" parent="UI/Footer/SolveControls"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 30
+text = "Solve
+"
+script = ExtResource("5_wm3ai")
+
+[node name="Next" type="Button" parent="UI/Footer/SolveControls"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 30
+text = "Next"
+script = ExtResource("5_wm3ai")
+
+[node name="MarginContainer7" type="MarginContainer" parent="UI/Footer/SolveControls"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="MarginContainer3" type="MarginContainer" parent="UI/Footer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+
+[connection signal="pressed" from="UI/Footer/SolveControls/Prev" to="UI/Footer/SolveControls/Prev" method="_on_pressed"]
+[connection signal="pressed" from="UI/Footer/SolveControls/Solve" to="UI/Footer/SolveControls/Solve" method="_on_pressed"]
+[connection signal="pressed" from="UI/Footer/SolveControls/Next" to="UI/Footer/SolveControls/Next" method="_on_pressed"]

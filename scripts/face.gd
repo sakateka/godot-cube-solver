@@ -9,11 +9,23 @@ func for_direction(direction: Vector3, type: Globals.CubieType):
 	var shapeInstance = get_child(0)
 	var meshInstance = get_child(-1)
 	
-	meshInstance.mesh.size = (Vector3(0.95, 0.95, 0.95) - direction.normalized().abs()).abs()
+	meshInstance.mesh.size = (Vector3(0.90, 0.90, 0.90) - direction.normalized().abs()).abs()
 	shapeInstance.shape.size = meshInstance.mesh.size
-	meshInstance.mesh.material.albedo_color = Color.BLACK
-
-	position = direction * 0.45
+	
+	match direction.normalized():
+		Vector3.UP:
+			meshInstance.mesh.material.albedo_color = G.white
+		Vector3.RIGHT:
+			meshInstance.mesh.material.albedo_color = G.red
+		Vector3.BACK:
+			meshInstance.mesh.material.albedo_color = G.blue
+		Vector3.DOWN:
+			meshInstance.mesh.material.albedo_color = G.yellow
+		Vector3.LEFT:
+			meshInstance.mesh.material.albedo_color = G.green
+		Vector3.FORWARD:
+			meshInstance.mesh.material.albedo_color = G.orange
+	position = direction * 0.42
 
 
 func _on_input_event(camera: Node, event: InputEvent, event_position: Vector3, normal: Vector3, shape_idx: int) -> void:
