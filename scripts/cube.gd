@@ -13,9 +13,6 @@ var faceScene: PackedScene = preload("res://scenes/face.tscn")
 var cubieScene: PackedScene = preload("res://scenes/cubie.tscn")
 
 func _ready() -> void:
-	for i in range(10, -1, -1):
-		print("I = ", i)
-		
 	$CubieRoot.set_meta(POSITION_META, $CubieRoot.position)
 	for x in [-1.1, 0, 1.1]:
 		for y in [-1.1, 0, 1.1]:
