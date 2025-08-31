@@ -4,3 +4,4 @@
 rust/target
 solver.apk
 solver.apk.idsig
+export_presets.cfg
