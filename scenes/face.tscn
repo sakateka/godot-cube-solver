@@ -13,9 +13,11 @@ resource_local_to_scene = true
 material = SubResource("StandardMaterial3D_ngt2y")
 
 [node name="Face" type="Area3D"]
+monitoring = false
+monitorable = false
 script = ExtResource("1_3alo4")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="Shape" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_r3fl7")
 
 [node name="Mesh" type="MeshInstance3D" parent="."]

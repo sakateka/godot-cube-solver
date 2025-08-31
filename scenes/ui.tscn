@@ -1,16 +1,58 @@
-[gd_scene load_steps=10 format=3 uid="uid://bjk47yw7ramg3"]
+[gd_scene load_steps=31 format=3 uid="uid://bjk47yw7ramg3"]
 
+[ext_resource type="Script" uid="uid://chrnm7w6c16er" path="res://scripts/colors_container.gd" id="1_41akx"]
 [ext_resource type="StyleBox" uid="uid://demgshf5bo6w0" path="res://resources/focus.tres" id="1_nltto"]
+[ext_resource type="Script" uid="uid://d4m8obyhklu8c" path="res://scripts/buttons/rotation_panel.gd" id="1_sesyt"]
 [ext_resource type="StyleBox" uid="uid://crrhtawy3njd6" path="res://resources/disabled.tres" id="2_ibotj"]
 [ext_resource type="StyleBox" uid="uid://drt514gue373s" path="res://resources/normal.tres" id="3_n5ude"]
 [ext_resource type="StyleBox" uid="uid://byy1xix8g23a2" path="res://resources/pressed.tres" id="4_y4yjw"]
-[ext_resource type="Script" uid="uid://bpjcfp483eyvm" path="res://scripts/btn_fix.gd" id="5_wm3ai"]
+[ext_resource type="Script" uid="uid://bpjcfp483eyvm" path="res://scripts/buttons/fix.gd" id="5_wm3ai"]
+[ext_resource type="Texture2D" uid="uid://drse146jiy4n1" path="res://icons/reset.svg" id="6_7dvkv"]
+[ext_resource type="Texture2D" uid="uid://eoc0uyiv4eyr" path="res://icons/fix.svg" id="7_6rmj2"]
+[ext_resource type="Script" uid="uid://c3opk8p6wtexn" path="res://scripts/buttons/reset.gd" id="7_f7tlh"]
+[ext_resource type="Texture2D" uid="uid://duotnjxrgfgu0" path="res://icons/reset-pressed.svg" id="7_vdcm2"]
+[ext_resource type="Texture2D" uid="uid://s1bwn7ciixuf" path="res://icons/clear.svg" id="8_7dvkv"]
+[ext_resource type="Texture2D" uid="uid://c3f1yn1mkvs4d" path="res://icons/magic.svg" id="8_ktti3"]
+[ext_resource type="Texture2D" uid="uid://pf8tycha0e5i" path="res://icons/fix-pressed.svg" id="8_vsj0x"]
+[ext_resource type="Texture2D" uid="uid://c3rwufftes0c8" path="res://icons/clear-pressed.svg" id="9_vdcm2"]
+[ext_resource type="Texture2D" uid="uid://coyqjkgcencit" path="res://icons/rotations.svg" id="12_cof4p"]
+[ext_resource type="Texture2D" uid="uid://1iytkp1nyxl4" path="res://icons/prev.svg" id="12_qsv74"]
+[ext_resource type="Texture2D" uid="uid://dq4i7rbg1v4od" path="res://icons/rotations-pressed.svg" id="13_f7tlh"]
+[ext_resource type="Texture2D" uid="uid://csybnv7dhlxo3" path="res://icons/next.svg" id="14_h1mc3"]
+[ext_resource type="Script" uid="uid://nii66qcmb75a" path="res://scripts/buttons/clear.gd" id="14_jkdwc"]
+[ext_resource type="Script" uid="uid://dvsjrtw7bjhac" path="res://scripts/buttons/prev.gd" id="18_kupmu"]
+[ext_resource type="Script" uid="uid://cb1woacrreax1" path="res://scripts/buttons/solve.gd" id="19_ycmcx"]
+[ext_resource type="Script" uid="uid://du7cl12ddalr" path="res://scripts/buttons/next.gd" id="20_rlppe"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_r3fl7"]
 blend_mode = 4
 
 [sub_resource type="Theme" id="Theme_a0tk4"]
-default_font_size = 60
+default_base_scale = 10.0
+default_font_size = 50
+Button/colors/font_color = Color(0, 0, 0, 1)
+Button/colors/font_focus_color = Color(0.160784, 0.0470588, 0.301961, 1)
+Button/colors/font_hover_color = Color(0.162567, 0.0486401, 0.302054, 1)
+Button/colors/font_hover_pressed_color = Color(0.160784, 0.0470588, 0.301961, 1)
+Button/colors/font_pressed_color = Color(0, 0, 0, 1)
+Label/colors/font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kupmu"]
+bg_color = Color(0.538308, 0.760734, 0.940818, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.2607, 0.560637, 0.79, 0.780392)
+border_blend = true
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 8.0
+expand_margin_top = 8.0
+expand_margin_right = 8.0
+expand_margin_bottom = 8.0
 
 [sub_resource type="SystemFont" id="SystemFont_r3fl7"]
 subpixel_positioning = 0
@@ -18,6 +60,26 @@ subpixel_positioning = 0
 [sub_resource type="Theme" id="Theme_jka67"]
 default_font = SubResource("SystemFont_r3fl7")
 default_font_size = 60
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wm3ai"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.185579, 0.455024, 0.56776, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8dubc"]
+bg_color = Color(0.184314, 0.454902, 0.568627, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.184314, 0.454902, 0.568627, 1)
 
 [node name="Control" type="Control"]
 material = SubResource("CanvasItemMaterial_r3fl7")
@@ -32,6 +94,241 @@ size_flags_vertical = 3
 size_flags_stretch_ratio = 8.0
 mouse_filter = 1
 theme = SubResource("Theme_a0tk4")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+visible = false
+top_level = true
+z_index = 3
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.7
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_kupmu")
+script = ExtResource("1_sesyt")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Front" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="F" type="Button" parent="PanelContainer/VBoxContainer/Front"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "F"
+
+[node name="F\'" type="Button" parent="PanelContainer/VBoxContainer/Front"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "F'"
+
+[node name="F2" type="Button" parent="PanelContainer/VBoxContainer/Front"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "F2"
+
+[node name="Left" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="L" type="Button" parent="PanelContainer/VBoxContainer/Left"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "L"
+
+[node name="L\'" type="Button" parent="PanelContainer/VBoxContainer/Left"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "L'"
+
+[node name="L2" type="Button" parent="PanelContainer/VBoxContainer/Left"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "L2"
+
+[node name="Right" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="R" type="Button" parent="PanelContainer/VBoxContainer/Right"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "R"
+
+[node name="R\'" type="Button" parent="PanelContainer/VBoxContainer/Right"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "R'"
+
+[node name="R2" type="Button" parent="PanelContainer/VBoxContainer/Right"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "R2"
+
+[node name="Up" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="U" type="Button" parent="PanelContainer/VBoxContainer/Up"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "U"
+
+[node name="U\'" type="Button" parent="PanelContainer/VBoxContainer/Up"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "U'"
+
+[node name="U2" type="Button" parent="PanelContainer/VBoxContainer/Up"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "U2"
+
+[node name="Back" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="B" type="Button" parent="PanelContainer/VBoxContainer/Back"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "B"
+
+[node name="B\'" type="Button" parent="PanelContainer/VBoxContainer/Back"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "B'"
+
+[node name="B2" type="Button" parent="PanelContainer/VBoxContainer/Back"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "B2"
+
+[node name="Down" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="D" type="Button" parent="PanelContainer/VBoxContainer/Down"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "D"
+
+[node name="D\'" type="Button" parent="PanelContainer/VBoxContainer/Down"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "D'"
+
+[node name="D2" type="Button" parent="PanelContainer/VBoxContainer/Down"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "D2"
+
+[node name="X" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="X" type="Button" parent="PanelContainer/VBoxContainer/X"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "X"
+
+[node name="X\'" type="Button" parent="PanelContainer/VBoxContainer/X"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "X'"
+
+[node name="X2" type="Button" parent="PanelContainer/VBoxContainer/X"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "X2"
+
+[node name="Y" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Y" type="Button" parent="PanelContainer/VBoxContainer/Y"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Y"
+
+[node name="Y\'" type="Button" parent="PanelContainer/VBoxContainer/Y"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Y'"
+
+[node name="Y2" type="Button" parent="PanelContainer/VBoxContainer/Y"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Y2"
+
+[node name="Z" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Z" type="Button" parent="PanelContainer/VBoxContainer/Z"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Z"
+
+[node name="Z\'" type="Button" parent="PanelContainer/VBoxContainer/Z"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Z'"
+
+[node name="Z2" type="Button" parent="PanelContainer/VBoxContainer/Z"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Z2"
+
+[node name="VSplitContainer" type="VSplitContainer" parent="PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="Backspace" type="Button" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Backspace
+"
+
+[node name="Close" type="Button" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Close"
 
 [node name="UI" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -53,6 +350,7 @@ size_flags_vertical = 3
 [node name="Colors" type="HBoxContainer" parent="UI/Header"]
 layout_mode = 2
 size_flags_vertical = 3
+script = ExtResource("1_41akx")
 
 [node name="MarginContainer3" type="MarginContainer" parent="UI/Header/Colors"]
 layout_mode = 2
@@ -63,14 +361,15 @@ size_flags_vertical = 3
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="UI/Header/Colors/Up"]
+[node name="WhiteLabel" type="Label" parent="UI/Header/Colors/Up"]
 layout_mode = 2
 size_flags_vertical = 6
 theme = SubResource("Theme_jka67")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "0"
 horizontal_alignment = 1
 
-[node name="Button6" type="Button" parent="UI/Header/Colors/Up"]
+[node name="White" type="Button" parent="UI/Header/Colors/Up"]
 z_index = 1
 custom_minimum_size = Vector2(70, 70)
 layout_mode = 2
@@ -82,7 +381,7 @@ theme_override_styles/hover = ExtResource("3_n5ude")
 theme_override_styles/pressed = ExtResource("4_y4yjw")
 theme_override_styles/normal = ExtResource("3_n5ude")
 
-[node name="ColorRect" type="ColorRect" parent="UI/Header/Colors/Up/Button6"]
+[node name="ColorRect" type="ColorRect" parent="UI/Header/Colors/Up/White"]
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = 15
@@ -96,14 +395,15 @@ mouse_filter = 1
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="UI/Header/Colors/Right"]
+[node name="RedLabel" type="Label" parent="UI/Header/Colors/Right"]
 layout_mode = 2
 size_flags_vertical = 6
 theme = SubResource("Theme_jka67")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "0"
 horizontal_alignment = 1
 
-[node name="Button6" type="Button" parent="UI/Header/Colors/Right"]
+[node name="Red" type="Button" parent="UI/Header/Colors/Right"]
 z_index = 1
 custom_minimum_size = Vector2(70, 70)
 layout_mode = 2
@@ -115,41 +415,7 @@ theme_override_styles/hover = ExtResource("3_n5ude")
 theme_override_styles/pressed = ExtResource("4_y4yjw")
 theme_override_styles/normal = ExtResource("3_n5ude")
 
-[node name="ColorRect" type="ColorRect" parent="UI/Header/Colors/Right/Button6"]
-show_behind_parent = true
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 1
-color = Color(0, 0, 1, 1)
-
-[node name="Front" type="VBoxContainer" parent="UI/Header/Colors"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Label" type="Label" parent="UI/Header/Colors/Front"]
-layout_mode = 2
-size_flags_vertical = 6
-theme = SubResource("Theme_jka67")
-text = "0"
-horizontal_alignment = 1
-
-[node name="Button6" type="Button" parent="UI/Header/Colors/Front"]
-z_index = 1
-custom_minimum_size = Vector2(70, 70)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_styles/focus = ExtResource("1_nltto")
-theme_override_styles/disabled = ExtResource("2_ibotj")
-theme_override_styles/hover = ExtResource("3_n5ude")
-theme_override_styles/pressed = ExtResource("4_y4yjw")
-theme_override_styles/normal = ExtResource("3_n5ude")
-
-[node name="ColorRect" type="ColorRect" parent="UI/Header/Colors/Front/Button6"]
+[node name="ColorRect" type="ColorRect" parent="UI/Header/Colors/Right/Red"]
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = 15
@@ -160,18 +426,19 @@ grow_vertical = 2
 mouse_filter = 1
 color = Color(1, 0, 0, 1)
 
-[node name="Down" type="VBoxContainer" parent="UI/Header/Colors"]
+[node name="Front" type="VBoxContainer" parent="UI/Header/Colors"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="UI/Header/Colors/Down"]
+[node name="GreenLabel" type="Label" parent="UI/Header/Colors/Front"]
 layout_mode = 2
 size_flags_vertical = 6
 theme = SubResource("Theme_jka67")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "0"
 horizontal_alignment = 1
 
-[node name="Button6" type="Button" parent="UI/Header/Colors/Down"]
+[node name="Green" type="Button" parent="UI/Header/Colors/Front"]
 z_index = 1
 custom_minimum_size = Vector2(70, 70)
 layout_mode = 2
@@ -183,41 +450,7 @@ theme_override_styles/hover = ExtResource("3_n5ude")
 theme_override_styles/pressed = ExtResource("4_y4yjw")
 theme_override_styles/normal = ExtResource("3_n5ude")
 
-[node name="ColorRect" type="ColorRect" parent="UI/Header/Colors/Down/Button6"]
-show_behind_parent = true
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 1
-color = Color(1, 1, 0, 1)
-
-[node name="Left" type="VBoxContainer" parent="UI/Header/Colors"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Label" type="Label" parent="UI/Header/Colors/Left"]
-layout_mode = 2
-size_flags_vertical = 6
-theme = SubResource("Theme_jka67")
-text = "0"
-horizontal_alignment = 1
-
-[node name="Button6" type="Button" parent="UI/Header/Colors/Left"]
-z_index = 1
-custom_minimum_size = Vector2(70, 70)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_styles/focus = ExtResource("1_nltto")
-theme_override_styles/disabled = ExtResource("2_ibotj")
-theme_override_styles/hover = ExtResource("3_n5ude")
-theme_override_styles/pressed = ExtResource("4_y4yjw")
-theme_override_styles/normal = ExtResource("3_n5ude")
-
-[node name="ColorRect" type="ColorRect" parent="UI/Header/Colors/Left/Button6"]
+[node name="ColorRect" type="ColorRect" parent="UI/Header/Colors/Front/Green"]
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = 15
@@ -228,18 +461,19 @@ grow_vertical = 2
 mouse_filter = 1
 color = Color(0, 0.501961, 0, 1)
 
-[node name="Back" type="VBoxContainer" parent="UI/Header/Colors"]
+[node name="Down" type="VBoxContainer" parent="UI/Header/Colors"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="UI/Header/Colors/Back"]
+[node name="BlueLabel" type="Label" parent="UI/Header/Colors/Down"]
 layout_mode = 2
 size_flags_vertical = 6
 theme = SubResource("Theme_jka67")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "0"
 horizontal_alignment = 1
 
-[node name="Button6" type="Button" parent="UI/Header/Colors/Back"]
+[node name="Blue" type="Button" parent="UI/Header/Colors/Down"]
 z_index = 1
 custom_minimum_size = Vector2(70, 70)
 layout_mode = 2
@@ -251,7 +485,42 @@ theme_override_styles/hover = ExtResource("3_n5ude")
 theme_override_styles/pressed = ExtResource("4_y4yjw")
 theme_override_styles/normal = ExtResource("3_n5ude")
 
-[node name="ColorRect" type="ColorRect" parent="UI/Header/Colors/Back/Button6"]
+[node name="ColorRect" type="ColorRect" parent="UI/Header/Colors/Down/Blue"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+color = Color(0, 0, 1, 1)
+
+[node name="Left" type="VBoxContainer" parent="UI/Header/Colors"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="OrangeLabel" type="Label" parent="UI/Header/Colors/Left"]
+layout_mode = 2
+size_flags_vertical = 6
+theme = SubResource("Theme_jka67")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "0"
+horizontal_alignment = 1
+
+[node name="Orange" type="Button" parent="UI/Header/Colors/Left"]
+z_index = 1
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/focus = ExtResource("1_nltto")
+theme_override_styles/disabled = ExtResource("2_ibotj")
+theme_override_styles/hover = ExtResource("3_n5ude")
+theme_override_styles/pressed = ExtResource("4_y4yjw")
+theme_override_styles/normal = ExtResource("3_n5ude")
+
+[node name="ColorRect" type="ColorRect" parent="UI/Header/Colors/Left/Orange"]
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = 15
@@ -261,6 +530,41 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 color = Color(1, 0.54902, 0, 1)
+
+[node name="Back" type="VBoxContainer" parent="UI/Header/Colors"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="YellowLabel" type="Label" parent="UI/Header/Colors/Back"]
+layout_mode = 2
+size_flags_vertical = 6
+theme = SubResource("Theme_jka67")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "0"
+horizontal_alignment = 1
+
+[node name="Yellow" type="Button" parent="UI/Header/Colors/Back"]
+z_index = 1
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/focus = ExtResource("1_nltto")
+theme_override_styles/disabled = ExtResource("2_ibotj")
+theme_override_styles/hover = ExtResource("3_n5ude")
+theme_override_styles/pressed = ExtResource("4_y4yjw")
+theme_override_styles/normal = ExtResource("3_n5ude")
+
+[node name="ColorRect" type="ColorRect" parent="UI/Header/Colors/Back/Yellow"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+color = Color(1, 1, 0, 1)
 
 [node name="MarginContainer4" type="MarginContainer" parent="UI/Header/Colors"]
 layout_mode = 2
@@ -285,69 +589,118 @@ size_flags_vertical = 3
 mouse_filter = 0
 
 [node name="MarginContainer4" type="MarginContainer" parent="UI/Footer"]
-custom_minimum_size = Vector2(0, 10)
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 
 [node name="Controls" type="HBoxContainer" parent="UI/Footer"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="MarginContainer2" type="MarginContainer" parent="UI/Footer/Controls"]
+[node name="MarginContainer6" type="MarginContainer" parent="UI/Footer/Controls"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="MarginContainer5" type="MarginContainer" parent="UI/Footer/Controls"]
+[node name="Reset" type="TextureButton" parent="UI/Footer/Controls"]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_vertical = 3
+texture_normal = ExtResource("6_7dvkv")
+texture_pressed = ExtResource("7_vdcm2")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("7_f7tlh")
 
-[node name="MarginContainer3" type="MarginContainer" parent="UI/Footer/Controls"]
+[node name="Fix" type="TextureButton" parent="UI/Footer/Controls"]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_vertical = 3
+texture_normal = ExtResource("7_6rmj2")
+texture_pressed = ExtResource("8_vsj0x")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("5_wm3ai")
 
-[node name="MarginContainer4" type="MarginContainer" parent="UI/Footer/Controls"]
+[node name="Clear" type="TextureButton" parent="UI/Footer/Controls"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture_normal = ExtResource("8_7dvkv")
+texture_pressed = ExtResource("9_vdcm2")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("14_jkdwc")
+
+[node name="Rotations" type="TextureButton" parent="UI/Footer/Controls"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture_normal = ExtResource("12_cof4p")
+texture_pressed = ExtResource("13_f7tlh")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="MarginContainer7" type="MarginContainer" parent="UI/Footer/Controls"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="MarginContainer" type="MarginContainer" parent="UI/Footer"]
-custom_minimum_size = Vector2(0, 10)
+custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 
 [node name="Rotations" type="HBoxContainer" parent="UI/Footer"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="MarginContainer2" type="MarginContainer" parent="UI/Footer/Rotations"]
+[node name="MarginContainer4" type="MarginContainer" parent="UI/Footer/Rotations"]
+custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
-size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="MarginContainer5" type="MarginContainer" parent="UI/Footer/Rotations"]
+[node name="Panel" type="Panel" parent="UI/Footer/Rotations"]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_wm3ai")
+
+[node name="Text" type="HBoxContainer" parent="UI/Footer/Rotations/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Left" type="Label" parent="UI/Footer/Rotations/Panel/Text"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "R L D U"
+horizontal_alignment = 2
+vertical_alignment = 1
+justification_flags = 161
+clip_text = true
+
+[node name="VSeparator" type="VSeparator" parent="UI/Footer/Rotations/Panel/Text"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxFlat_8dubc")
+
+[node name="Right" type="Label" parent="UI/Footer/Rotations/Panel/Text"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "R' B L F X Y Z F F B2 R' L' M2"
+vertical_alignment = 1
+justification_flags = 161
+clip_text = true
 
 [node name="MarginContainer3" type="MarginContainer" parent="UI/Footer/Rotations"]
+custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="MarginContainer4" type="MarginContainer" parent="UI/Footer/Rotations"]
-layout_mode = 2
-size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="MarginContainer2" type="MarginContainer" parent="UI/Footer"]
-custom_minimum_size = Vector2(0, 10)
+custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 
 [node name="SolveControls" type="HBoxContainer" parent="UI/Footer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_constants/separation = 20
+theme_override_constants/separation = 10
 
 [node name="MarginContainer6" type="MarginContainer" parent="UI/Footer/SolveControls"]
 layout_mode = 2
@@ -357,24 +710,24 @@ size_flags_vertical = 3
 [node name="Prev" type="Button" parent="UI/Footer/SolveControls"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 30
 text = "Prev"
-script = ExtResource("5_wm3ai")
+icon = ExtResource("12_qsv74")
+icon_alignment = 2
+script = ExtResource("18_kupmu")
 
 [node name="Solve" type="Button" parent="UI/Footer/SolveControls"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 30
-text = "Solve
-"
-script = ExtResource("5_wm3ai")
+text = " Solve"
+icon = ExtResource("8_ktti3")
+script = ExtResource("19_ycmcx")
 
 [node name="Next" type="Button" parent="UI/Footer/SolveControls"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 30
 text = "Next"
-script = ExtResource("5_wm3ai")
+icon = ExtResource("14_h1mc3")
+script = ExtResource("20_rlppe")
 
 [node name="MarginContainer7" type="MarginContainer" parent="UI/Footer/SolveControls"]
 layout_mode = 2
@@ -382,9 +735,21 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="MarginContainer3" type="MarginContainer" parent="UI/Footer"]
-custom_minimum_size = Vector2(0, 40)
+custom_minimum_size = Vector2(0, 90)
 layout_mode = 2
 
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Backspace" to="PanelContainer" method="_on_backspace_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Close" to="PanelContainer" method="_on_close_pressed"]
+[connection signal="focus_entered" from="UI/Header/Colors/Up/White" to="UI/Header/Colors" method="_on_white_focus_entered"]
+[connection signal="focus_entered" from="UI/Header/Colors/Right/Red" to="UI/Header/Colors" method="_on_red_focus_entered"]
+[connection signal="focus_entered" from="UI/Header/Colors/Front/Green" to="UI/Header/Colors" method="_on_green_focus_entered"]
+[connection signal="focus_entered" from="UI/Header/Colors/Down/Blue" to="UI/Header/Colors" method="_on_blue_focus_entered"]
+[connection signal="focus_entered" from="UI/Header/Colors/Left/Orange" to="UI/Header/Colors" method="_on_orange_focus_entered"]
+[connection signal="focus_entered" from="UI/Header/Colors/Back/Yellow" to="UI/Header/Colors" method="_on_yellow_focus_entered"]
+[connection signal="pressed" from="UI/Footer/Controls/Reset" to="UI/Footer/Controls/Reset" method="_on_pressed"]
+[connection signal="pressed" from="UI/Footer/Controls/Fix" to="UI/Footer/Controls/Fix" method="_on_pressed"]
+[connection signal="pressed" from="UI/Footer/Controls/Clear" to="UI/Footer/Controls/Clear" method="_on_pressed"]
+[connection signal="pressed" from="UI/Footer/Controls/Rotations" to="PanelContainer" method="_on_rotations_pressed"]
 [connection signal="pressed" from="UI/Footer/SolveControls/Prev" to="UI/Footer/SolveControls/Prev" method="_on_pressed"]
 [connection signal="pressed" from="UI/Footer/SolveControls/Solve" to="UI/Footer/SolveControls/Solve" method="_on_pressed"]
 [connection signal="pressed" from="UI/Footer/SolveControls/Next" to="UI/Footer/SolveControls/Next" method="_on_pressed"]

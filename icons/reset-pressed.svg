@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+
+<svg
+   width="80.000008"
+   height="88.888351"
+   viewBox="0 0 2.8000003 3.1110924"
+   fill="none"
+   version="1.1"
+   id="svg2"
+   sodipodi:docname="reset-pressed.svg"
+   inkscape:export-filename="approvals-dark.png"
+   inkscape:export-xdpi="4.8000002"
+   inkscape:export-ydpi="4.8000002"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="namedview2"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1">
+    <inkscape:page
+       x="0"
+       y="0"
+       width="2.8000002"
+       height="3.1110923"
+       id="page1"
+       margin="0"
+       bleed="0" />
+  </sodipodi:namedview>
+  <ellipse
+     style="opacity:0.303;fill:#60009d;fill-opacity:1;stroke-width:0.064868"
+     id="path4"
+     cx="1.3941014"
+     cy="1.7594789"
+     rx="1.3069699"
+     ry="1.3495222"
+     inkscape:export-filename="reset-pressed.svg"
+     inkscape:export-xdpi="86.400002"
+     inkscape:export-ydpi="86.400002" />
+  <path
+     d="m 1.3045265,0.02848172 c -0.038986,-0.0379624 -0.1022446,-0.0379788 -0.1412518,-3.012e-5 -0.039016,0.0379576 -0.039031,0.0994753 -2.85e-5,0.13740236 l 0.227509,0.22136 C 0.62179316,0.39196686 0,1.0000219 0,1.7491395 c 0,0.7521861 0.6268981,1.3619527 1.4002108,1.3619527 0.7613416,0 1.380737,-0.5909938 1.399757,-1.3271028 0.00139,-0.053649 -0.042184,-0.098216 -0.097334,-0.099595 -0.055152,-0.00135 -0.101002,0.041073 -0.102372,0.094722 -0.01632,0.6309766 -0.54735,1.1376562 -1.2000319,1.1376562 -0.66297412,0 -1.20041975,-0.5227574 -1.20041975,-1.1676203 0,-0.642829 0.53407717,-1.16433644 1.19417285,-1.16760444 L 1.163275,0.80594335 c -0.039,0.0379458 -0.039,0.0994848 0,0.1374024 0.039,0.03796 0.1022424,0.03796 0.1412564,0 L 1.7041048,0.55469634 c 0.039,-0.0379436 0.039,-0.0994658 1.18e-5,-0.1373882 z"
+     fill="#212121"
+     id="path1"
+     style="fill:#60009d;fill-opacity:1;stroke-width:0.131363" />
+  <path
+     d="m 1.9705138,1.324187 c 0.038986,0.037962 0.038986,0.099489 -2.63e-5,0.137407 L 1.2712284,2.1416012 c -0.038986,0.037938 -0.1021976,0.037958 -0.1412118,3.94e-5 L 0.83003716,1.8502075 c -0.0390236,-0.037936 -0.0390612,-0.099461 -8.132e-5,-0.1373952 0.0389718,-0.037979 0.1022282,-0.038014 0.1412658,-9.23e-5 L 1.200542,1.9355352 1.8292203,1.324189 c 0.039,-0.037967 0.1022588,-0.037955 0.1412752,8e-6 z"
+     fill="#212121"
+     id="path2"
+     style="fill:#60009d;fill-opacity:1;stroke-width:0.131363"
+     inkscape:export-filename="approvals-dark.svg"
+     inkscape:export-xdpi="101.65"
+     inkscape:export-ydpi="101.65" />
+</svg>

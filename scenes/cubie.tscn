@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://b7l7c4vfnrfb7"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_noarx"]
+albedo_color = Color(0.223103, 0.223103, 0.223103, 1)
+metallic_specular = 0.16
+rim = 0.16
+refraction_enabled = true
+refraction_scale = 0.36
+
+[sub_resource type="BoxMesh" id="BoxMesh_a202f"]
+material = SubResource("StandardMaterial3D_noarx")
+
+[node name="Cubie" type="MeshInstance3D"]
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../..")

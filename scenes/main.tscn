@@ -1,14 +1,21 @@
-[gd_scene load_steps=8 format=3 uid="uid://bvrdm3dj2iyuc"]
+[gd_scene load_steps=9 format=3 uid="uid://bvrdm3dj2iyuc"]
 
-[ext_resource type="Script" uid="uid://bvrv2bf6vq6ao" path="res://scripts/node_3d.gd" id="1_sugp2"]
+[ext_resource type="Script" uid="uid://bvrv2bf6vq6ao" path="res://scripts/world.gd" id="1_sugp2"]
 [ext_resource type="PackedScene" uid="uid://bjk47yw7ramg3" path="res://scenes/ui.tscn" id="2_jyhfs"]
 [ext_resource type="Script" uid="uid://ciq5koh4wo5gk" path="res://scripts/cube.gd" id="3_tbgi4"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_noarx"]
-albedo_color = Color(0.0784314, 0.0666667, 0.286275, 1)
+albedo_color = Color(0.223103, 0.223103, 0.223103, 1)
+metallic_specular = 0.16
+rim = 0.16
+refraction_enabled = true
+refraction_scale = 0.36
 
 [sub_resource type="BoxMesh" id="BoxMesh_a202f"]
 material = SubResource("StandardMaterial3D_noarx")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sugp2"]
+size = Vector3(3, 3, 3)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r3fl7"]
 albedo_color = Color(0.5852, 0.658033, 0.76, 1)
@@ -38,6 +45,13 @@ script = ExtResource("3_tbgi4")
 [node name="CubieRoot" type="MeshInstance3D" parent="Cube"]
 mesh = SubResource("BoxMesh_a202f")
 skeleton = NodePath("../..")
+
+[node name="InputBlocker" type="Area3D" parent="Cube/CubieRoot"]
+monitoring = false
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cube/CubieRoot/InputBlocker"]
+shape = SubResource("BoxShape3D_sugp2")
 
 [node name="Background" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7)

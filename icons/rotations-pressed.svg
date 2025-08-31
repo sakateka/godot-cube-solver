@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="76"
+   height="80"
+   viewBox="0 0 2.28 2.4"
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="rotations.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1">
+    <inkscape:page
+       x="0"
+       y="0"
+       width="2.28"
+       height="2.4000001"
+       id="page2"
+       margin="0"
+       bleed="0" />
+  </sodipodi:namedview>
+  <!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+  <title
+     id="title1">ic_fluent_book_formula_statistics_24_regular</title>
+  <desc
+     id="desc1">Created with Sketch.</desc>
+  <circle
+     style="opacity:0.302;fill:#60009d;stroke-width:0.03"
+     id="path1"
+     cx="1.1399999"
+     cy="1.1524309"
+     r="1.14" />
+  <path
+     d="M 1.8491351,1.1920929e-7 C 2.0081917,1.1920929e-7 2.1383396,0.12378462 2.148497,0.28027502 l 6.381e-4,0.0197251 V 2.0100001 c 0,0.045562 -0.03386,0.083219 -0.077788,0.089178 l -0.012212,8.22e-4 H 0.34913509 c 0,0.061542 0.046325,0.1122611 0.1060056,0.1191927 l 0.0139944,8.073e-4 H 2.0591351 c 0.049704,0 0.09,0.040296 0.09,0.09 0,0.045562 -0.03386,0.083219 -0.077788,0.089178 l -0.012212,8.22e-4 H 0.46913509 c -0.1590578,0 -0.2892046,-0.1237856 -0.2993619,-0.2802751 L 0.16913509,2.1 V 0.30000012 c 0,-0.1590578 0.1237845,-0.2892046 0.2802749,-0.29936190079 L 0.46913509,1.1920929e-7 Z m 0,0.18000000079071 H 0.46913509 c -0.06154,0 -0.1122608,0.046325 -0.1191927,0.1060056 l -8.073e-4,0.0139944 V 1.9200001 H 1.9691351 V 0.30000012 c 0,-0.0615398 -0.046323,-0.1122608 -0.1060051,-0.1191927 z m -0.837144,0.4200456 c 0.030712,9.744e-4 0.058476,0.017503 0.074101,0.043288 l 0.00593,0.011599 0.259956,0.61443958 0.119424,-0.20472 c 0.013824,-0.023698 0.03754,-0.039576 0.064196,-0.043629 l 0.013537,-0.00102 h 0.15 c 0.049704,0 0.09,0.040296 0.09,0.09 0,0.045562 -0.03386,0.083219 -0.077788,0.089179 l -0.012212,8.21e-4 h -0.098304 l -0.18396,0.3153479 c -0.01716,0.029436 -0.049476,0.046644 -0.083484,0.044472 -0.029757,-0.00191 -0.056335,-0.018375 -0.071406,-0.043483 L 1.2562511,1.5050641 1.0023191,0.90487572 0.87963349,1.1502481 c -0.013339,0.02668 -0.038866,0.044762 -0.067877,0.048865 l -0.0126214,8.871e-4 h -0.18 c -0.049705,0 -0.09,-0.040296 -0.09,-0.09 0,-0.045562 0.033859,-0.083219 0.077788,-0.089178 l 0.012212,-8.22e-4 h 0.1243764 l 0.1851276,-0.37024928 c 0.015708,-0.0314112 0.048252,-0.0508188 0.083352,-0.0497052 z"
+     id="🎨-Color"
+     inkscape:label="rotations"
+     style="fill:#60009d;fill-opacity:1;stroke-width:0.12"
+     inkscape:export-filename="rotations.svg"
+     inkscape:export-xdpi="96"
+     inkscape:export-ydpi="96" />
+</svg>
