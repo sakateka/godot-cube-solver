@@ -1,11 +1,12 @@
+class_name SolveButton
 extends Button
 
 @onready var left: Label = $"../../Rotations/Panel/Text/Left"
 @onready var right: Label = $"../../Rotations/Panel/Text/Right"
 
 @onready var normal_color: Color = get("theme_override_styles/normal").get("bg_color")
-@onready var hover_color: Color = get("theme_override_styles/normal").get("bg_color")
-@onready var focus_color: Color = get("theme_override_styles/normal").get("bg_color")
+@onready var hover_color: Color = get("theme_override_styles/hover").get("bg_color")
+@onready var focus_color: Color = get("theme_override_styles/focus").get("bg_color")
 
 
 func _on_face_color_changed(solve_btn: Button):
@@ -18,7 +19,7 @@ func _on_face_color_changed(solve_btn: Button):
 func _on_pressed() -> void:
 	print("Solve pressed!")
 	var facelet: String = G.cube.get_facelet()
-	var solution: String = Solver.solve(facelet)
+	var solution: String = Min2PhaseInstance.solve(facelet)
 	print("Facelet: ", facelet, " Solution: ", solution)
 	if not solution.begins_with("Error"):
 		left.text = ""

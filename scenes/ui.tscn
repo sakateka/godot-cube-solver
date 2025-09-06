@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://bjk47yw7ramg3"]
+[gd_scene load_steps=38 format=3 uid="uid://bjk47yw7ramg3"]
 
 [ext_resource type="Script" uid="uid://chrnm7w6c16er" path="res://scripts/colors_container.gd" id="1_41akx"]
 [ext_resource type="StyleBox" uid="uid://demgshf5bo6w0" path="res://resources/focus.tres" id="1_nltto"]
@@ -81,12 +81,13 @@ border_width_right = 2
 border_width_bottom = 2
 border_color = Color(0.184314, 0.454902, 0.568627, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gglip"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sesyt"]
 content_margin_left = 4.0
 content_margin_top = 4.0
 content_margin_right = 4.0
 content_margin_bottom = 4.0
-bg_color = Color(0.211765, 0.137255, 0.498039, 0.6)
+bg_color = Color(1, 1, 1, 0.75)
+draw_center = false
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
@@ -125,12 +126,13 @@ corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 corner_detail = 5
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rleeb"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_41akx"]
 content_margin_left = 4.0
 content_margin_top = 4.0
 content_margin_right = 4.0
 content_margin_bottom = 4.0
-bg_color = Color(0.0313726, 0.431373, 0.211765, 0.74902)
+bg_color = Color(1, 1, 1, 0.75)
+draw_center = false
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
@@ -145,12 +147,12 @@ expand_margin_top = 2.0
 expand_margin_right = 2.0
 expand_margin_bottom = 2.0
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wu1et"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_catpy"]
 content_margin_left = 4.0
 content_margin_top = 4.0
 content_margin_right = 4.0
 content_margin_bottom = 4.0
-bg_color = Color(0.0313726, 0.431373, 0.211765, 0.74902)
+bg_color = Color(0.389287, 0.389287, 0.389287, 0.74902)
 corner_radius_top_left = 3
 corner_radius_top_right = 3
 corner_radius_bottom_right = 3
@@ -168,6 +170,27 @@ corner_radius_top_right = 3
 corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gglip"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 0.75)
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
 
 [node name="Control" type="Control"]
 material = SubResource("CanvasItemMaterial_r3fl7")
@@ -793,7 +816,7 @@ size_flags_vertical = 3
 [node name="Prev" type="Button" parent="UI/Footer/SolveControls"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_styles/focus = SubResource("StyleBoxFlat_gglip")
+theme_override_styles/focus = SubResource("StyleBoxFlat_sesyt")
 theme_override_styles/hover = SubResource("StyleBoxFlat_0tsab")
 theme_override_styles/normal = SubResource("StyleBoxFlat_i5tog")
 text = "Prev"
@@ -804,8 +827,9 @@ script = ExtResource("18_kupmu")
 [node name="Solve" type="Button" parent="UI/Footer/SolveControls"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_styles/focus = SubResource("StyleBoxFlat_rleeb")
-theme_override_styles/hover = SubResource("StyleBoxFlat_wu1et")
+theme_override_styles/focus = SubResource("StyleBoxFlat_41akx")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_catpy")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wquew")
 theme_override_styles/normal = SubResource("StyleBoxFlat_wquew")
 disabled = true
 text = " Solve"

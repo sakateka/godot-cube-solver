@@ -24,7 +24,7 @@ func _ready():
 	$Up/WhiteLabel.add_theme_color_override("font_color", G.focus)
 	G.color_manager = self
 	
-	var solve_btn = $"../../Footer/SolveControls/Solve"
+	var solve_btn: SolveButton = $"../../Footer/SolveControls/Solve"
 	face_color_changed.connect(solve_btn._on_face_color_changed.bind(solve_btn))
 
 func colors_available() -> bool:

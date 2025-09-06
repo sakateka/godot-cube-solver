@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 G="*res://scripts/globals.gd"
+Min2PhaseInstance="*res://addons/min2phase/min2phase.gd"
 
 [display]
 
@@ -27,7 +28,7 @@ window/handheld/orientation=1
 
 [editor_plugins]
 
-enabled=PackedStringArray()
+enabled=PackedStringArray("res://addons/min2phase/plugin.cfg")
 
 [input_devices]
 
