@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="GodotBevyFirst"
+config/name="GodotCubeSolver"
 run/main_scene="uid://bvrdm3dj2iyuc"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"

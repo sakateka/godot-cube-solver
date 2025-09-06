@@ -11,15 +11,13 @@ func get_opposite_move(move: String) -> String:
 		return move.rstrip("'")
 	else:
 		return move + "'"
-		
-		
+
 func _on_pressed() -> void:
 	if G.cube.is_rotating():
 		return
 
 	var prev_rotation: String = get_prev_rotation()
 	if prev_rotation.length() > 0:
-		# FIXME: oposite rotation
 		G.cube.rotate_layer(get_opposite_move(prev_rotation))
 
 func get_prev_rotation() -> String:

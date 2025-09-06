@@ -1,10 +1,9 @@
 [configuration]
 entry_symbol = "gdext_rust_init"
-compatibility_minimum = 4.1
+compatibility_minimum = 4.3
+reloadable = true
 
 [libraries]
-android.debug.arm64 = "res://rust/target/debug/libmy_game.so"
-android.release.arm64 = "res://rust/target/release/libmy_game.so"
 linux.debug.x86_64 = "res://rust/target/debug/libmy_game.so"
 linux.release.x86_64 = "res://rust/target/release/libmy_game.so"
 windows.debug.x86_64 = "res://rust/target/debug/my_game.dll"

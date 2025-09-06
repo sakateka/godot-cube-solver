@@ -9,6 +9,7 @@ var colors: Array[Color] = [G.white, G.red, G.green, G.blue, G.orange, G.yellow]
 const facelet_letters: Array[String] = ["U", "R", "F", "D", "L", "B", "."]
 var color_use_counts: Array[int] = [0, 0, 0, 0 ,0, 0]
 
+signal face_color_changed
 
 func _ready():
 	labels = [
@@ -22,6 +23,14 @@ func _ready():
 	
 	$Up/WhiteLabel.add_theme_color_override("font_color", G.focus)
 	G.color_manager = self
+	
+	var solve_btn = $"../../Footer/SolveControls/Solve"
+	face_color_changed.connect(solve_btn._on_face_color_changed.bind(solve_btn))
+
+func colors_available() -> bool:
+	var not_equal_9 = func(x: int) -> bool:
+		return x != 9
+	return color_use_counts.any(not_equal_9)
 
 func color_to_facelet_letter(color: Color) -> String:
 	var idx = colors.find(color)
@@ -68,11 +77,14 @@ func mark_all_colors_as_unused() -> void:
 	for idx in range(color_use_counts.size()):
 		color_use_counts[idx] = 0
 		update_color_ui_for(idx)
+	face_color_changed.emit()
 
 func mark_all_colors_as_used() -> void:
 	for idx in range(color_use_counts.size()):
 		color_use_counts[idx] = 9
 		update_color_ui_for(idx)
+	face_color_changed.emit()
+
 
 func _on_white_focus_entered() -> void:
 	on_color_pressed(0)

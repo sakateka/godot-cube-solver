@@ -1,25 +1,29 @@
-use bevy::prelude::*;
 use godot::prelude::*;
-use godot_bevy::prelude::*;
 
-#[bevy_app]
-fn build_app(app: &mut App) {
-    // GodotDefaultPlugins provides all standard godot-bevy functionality
-    // For minimal setup, use individual plugins instead:
-    // app.add_plugins(GodotTransformSyncPlugin)
-    //     .add_plugins(GodotAudioPlugin)
-    //     .add_plugins(BevyInputBridgePlugin);
-    app.add_plugins(GodotDefaultPlugins);
+struct Min2PhaseExtension;
 
-    // Add your systems here
-    app.add_systems(Update, hello_world_system);
+#[gdextension]
+unsafe impl ExtensionLibrary for Min2PhaseExtension {}
+
+#[derive(GodotClass)]
+#[class(base=Node)]
+struct Solver {
+    base: Base<Node>,
 }
 
-fn hello_world_system(mut timer: Local<f32>, time: Res<Time>) {
-    // This runs every frame in Bevy's Update schedule
-    *timer += time.delta_secs();
-    if *timer > 10.0 {
-        *timer = 0.0;
-        godot_print!("Hello from Bevy ECS!");
+#[godot_api]
+impl INode for Solver {
+    fn init(base: Base<Node>) -> Self {
+        godot_print!("Hello, Solver!");
+
+        Self { base }
+    }
+}
+
+#[godot_api]
+impl Solver {
+    #[func]
+    fn solve(facelet: String) -> String {
+        min2phase::solve(&facelet, 25)
     }
 }

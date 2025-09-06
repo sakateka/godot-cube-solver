@@ -8,3 +8,4 @@ crate-type = ["cdylib"]
 
 [dependencies]
 godot = "0.3.5"
+min2phase = "0.2.4"
