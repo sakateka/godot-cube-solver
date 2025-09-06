@@ -10,7 +10,7 @@ var layer: Node3D
 var rotation_axis: Vector3
 var target_rotation: Vector3
 
-var sign: float = 1.0
+var rotation_sign: float = 1.0
 var target_angle: float = 0.0
 var current_angle: float = 0.0
 
@@ -136,7 +136,7 @@ func _physics_process(delta):
 		
 	var angle = delta * ROTATION_SPEED
 	current_angle += angle
-	layer.rotate_object_local(rotation_axis, angle * sign)
+	layer.rotate_object_local(rotation_axis, angle * rotation_sign)
 
 	if current_angle >= target_angle:
 		print("Rotation completed")
@@ -173,13 +173,13 @@ func rotate_layer(move: String):
 	
 func calculate_target_rotation() -> Vector3:
 	var current_rotation: Vector3 = layer.rotation
-	layer.rotate_object_local(rotation_axis, target_angle*sign)
-	var target_rotation = layer.rotation
+	layer.rotate_object_local(rotation_axis, target_angle*rotation_sign)
+	var target = layer.rotation
 	layer.rotation = current_rotation
-	return target_rotation
+	return target
 
 func rotation_to_target_angle() -> float:
-	sign = -1.0
+	rotation_sign = -1.0
 	var angle = PI_2
 	
 	if current_move.length() == 1:
@@ -189,7 +189,7 @@ func rotation_to_target_angle() -> float:
 	var c = current_move[1]
 	match c:
 		'U', 'R', 'F', 'D', 'L', 'B': pass
-		'\'', '-', '3': sign = 1.0
+		'\'', '-', '3': rotation_sign = 1.0
 		'2': angle = PI
 		'+', '1', ' ', '\t', _: pass
 	return angle

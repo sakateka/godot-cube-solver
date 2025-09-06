@@ -9,7 +9,7 @@ extends Button
 @onready var focus_color: Color = get("theme_override_styles/focus").get("bg_color")
 
 
-func _on_face_color_changed(solve_btn: Button):
+func _on_face_color_changed(solve_btn: SolveButton):
 	print("Face color changend")
 	get("theme_override_styles/normal").set("bg_color", normal_color)
 	get("theme_override_styles/hover").set("bg_color", hover_color)
