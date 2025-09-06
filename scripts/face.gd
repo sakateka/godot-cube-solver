@@ -7,10 +7,10 @@ const FACES_IN_GROUP = 9
 const face_directions: Array[Vector3] = [
 	Vector3.UP, 
 	Vector3.RIGHT, 
-	Vector3.BACK, # Actually front
+	Vector3.MODEL_FRONT,
 	Vector3.DOWN,
 	Vector3.LEFT,
-	Vector3.FORWARD, # Actually back
+	Vector3.MODEL_REAR,
 ]
 
 enum EventType {
@@ -47,6 +47,8 @@ func _on_input_event(_camera: Node, event: InputEvent, _event_position: Vector3,
 		if not event.pressed and last_event == EventType.TOUCH:
 			var color = G.color_manager.use_color(get_color())
 			set_color(color)
+			G.color_manager.face_color_changed.emit()
+
 		last_event = EventType.TOUCH
 	elif event is InputEventScreenDrag:
 		last_event = EventType.DRAG
@@ -58,21 +60,20 @@ func set_color(color: Color):
 	$Mesh.mesh.material.albedo_color = color
 
 func clear_color():
-	$Mesh.mesh.material.albedo_color = G.gray
+	set_color(G.gray)
 
 func reset_color():
-	var material = $Mesh.mesh.material
 	var direction = position / POSITION_MULTIPLIER
 	match direction.normalized():
 		Vector3.UP:
-			material.albedo_color = G.white
+			set_color(G.white)
 		Vector3.RIGHT:
-			material.albedo_color = G.red
-		Vector3.BACK: # Actually front
-			material.albedo_color = G.green
+			set_color(G.red)
+		Vector3.MODEL_FRONT:
+			set_color(G.green)
 		Vector3.DOWN:
-			material.albedo_color = G.blue
+			set_color(G.blue)
 		Vector3.LEFT:
-			material.albedo_color = G.orange
-		Vector3.FORWARD: # Actually back
-			material.albedo_color = G.yellow
+			set_color(G.orange)
+		Vector3.MODEL_REAR:
+			set_color(G.yellow)

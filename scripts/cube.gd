@@ -3,17 +3,28 @@ extends Node3D
 
 const PI_2 = PI / 2
 const POSITION_META = "origin_position"
+const ROTATION_SPEED = 2
 
 var layer: Node3D
+
+var rotation_axis: Vector3
+var target_rotation: Vector3
+
+var sign: float = 1.0
 var target_angle: float = 0.0
-var rotation_speed = 2
+var current_angle: float = 0.0
+
 var in_rotation: bool = false
+var current_move: String
 
 var faceScene: PackedScene = preload("res://scenes/face.tscn")
 var cubieScene: PackedScene = preload("res://scenes/cubie.tscn")
+var face_color_change_callback: Callable
 
 func _ready() -> void:
 	$CubieRoot.set_meta(POSITION_META, $CubieRoot.position)
+	G.cube = self
+	
 	for x in [-1.1, 0, 1.1]:
 		for y in [-1.1, 0, 1.1]:
 			for z in [-1.1, 0, 1.1]:
@@ -26,7 +37,6 @@ func _ready() -> void:
 				n.set_meta(POSITION_META, pos)
 				spawn_faces(n)
 				add_child(n)
-	G.cube = self
 
 #
 # Facelet management
@@ -63,10 +73,10 @@ static func position_to_index_in_group(direction: Vector3, cubie_pos: Vector3) -
 		Vector3.RIGHT:
 			grid_x = -cubie_pos.z as int
 			grid_y = cubie_pos.y as int
-		Vector3.BACK: # Actually front
+		Vector3.MODEL_FRONT:
 			grid_x = cubie_pos.x as int
 			grid_y = cubie_pos.y as int
-		Vector3.FORWARD: # Actually back
+		Vector3.MODEL_REAR:
 			grid_x = -cubie_pos.x as int 
 			grid_y = cubie_pos.y as int
 		_:
@@ -121,13 +131,16 @@ func is_rotating() -> bool:
 	return in_rotation
 
 func _physics_process(delta):
-	if not in_rotation:
+	if not current_move or not in_rotation:
 		return
 		
-	layer.rotation.x += delta * rotation_speed
-	if layer.rotation.x >= target_angle:
+	var angle = delta * ROTATION_SPEED
+	current_angle += angle
+	layer.rotate_object_local(rotation_axis, angle * sign)
+
+	if current_angle >= target_angle:
 		print("Rotation completed")
-		layer.rotation.x = target_angle
+		layer.rotation = target_rotation
 		in_rotation = false
 		
 		# Reparent layers children to root node
@@ -137,30 +150,67 @@ func _physics_process(delta):
 		layer.free()
 
 func rotate_layer(move: String):
-	if in_rotation:
+	if not move or in_rotation:
 		return
-		
+
 	print("Apply rotation: ", move)
 
 	in_rotation = true
-	
+	current_move = move
+	current_angle = 0.0
+	rotation_axis = rotation_to_cube_layer()
+
 	layer = Node3D.new()
-	layer.position = Vector3(1.1, 0, 0)
+	layer.position = rotation_axis * 1.1
 	$CubieRoot.add_child(layer)
 
 	for node in get_children():
-		if node.position.dot(Vector3.RIGHT) > 1.0:
+		if node.position.dot(layer.position) > 1.0:
 			node.reparent(layer)
 
-	target_angle = layer.rotation.x + PI_2
+	target_angle = rotation_to_target_angle()
+	target_rotation = calculate_target_rotation()
+	
+func calculate_target_rotation() -> Vector3:
+	var current_rotation: Vector3 = layer.rotation
+	layer.rotate_object_local(rotation_axis, target_angle*sign)
+	var target_rotation = layer.rotation
+	layer.rotation = current_rotation
+	return target_rotation
 
-func reset_cubie_rotations() -> void:
-	for cubie in get_children():
-		for face in cubie.get_children():
-			if face is Face:
-				face.rotation = Vector3.ZERO
-		cubie.rotation = Vector3.ZERO
-		cubie.position = cubie.get_meta(POSITION_META) as Vector3
+func rotation_to_target_angle() -> float:
+	sign = -1.0
+	var angle = PI_2
+	
+	if current_move.length() == 1:
+		return angle
+
+
+	var c = current_move[1]
+	match c:
+		'U', 'R', 'F', 'D', 'L', 'B': pass
+		'\'', '-', '3': sign = 1.0
+		'2': angle = PI
+		'+', '1', ' ', '\t', _: pass
+	return angle
+
+
+func rotation_to_cube_layer() -> Vector3:
+	match current_move[0]:
+		'U':
+			return Vector3.UP
+		'R':
+			return Vector3.RIGHT
+		'F':
+			return Vector3.MODEL_FRONT
+		'D':
+			return Vector3.DOWN
+		'L':
+			return Vector3.LEFT
+		'B':
+			return Vector3.MODEL_REAR
+	push_error("rotation_to_cube_layer: Unsupported rotation: ", current_move)
+	return Vector3.ZERO
 
 
 func clear_colors():
@@ -177,3 +227,11 @@ func fix_colors():
 			if face is Face:
 				face.reset_color()
 	G.color_manager.mark_all_colors_as_used()
+
+func reset_cubie_rotations() -> void:
+	for cubie in get_children():
+		for face in cubie.get_children():
+			if face is Face:
+				face.rotation = Vector3.ZERO
+		cubie.rotation = Vector3.ZERO
+		cubie.position = cubie.get_meta(POSITION_META) as Vector3
