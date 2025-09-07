@@ -606,6 +606,8 @@ class IdaContext:
 				if ret == 0:
 					var solbuf: String = solution.to_str()
 					return solbuf
+				elif ret == -1:
+					return ""
 
 		return "Error 8"
 
@@ -620,6 +622,8 @@ class IdaContext:
 				var ret = phase1(sctx, stbl, node, 0, depth1, -1)
 				if ret == 0:
 					return 0
+				elif ret == -1:
+					return ret
 
 		if maxl == 0 or premv_len + MIN_P1PRE_LEN >= length1:
 			return 1
@@ -643,10 +647,16 @@ class IdaContext:
 			var ret = phase1_pre_moves(sctx, stbl, maxl - 1, m, cd)
 			if ret == 0:
 				return 0
+			elif ret == -1:
+				return ret
 
 		return 1
 
 	func phase1(sctx: StaticContext, stbl: StaticTables, node: Coord, _ssym: int, maxl: int, lm: int) -> int:
+		# Check for cancellation
+		if sctx.should_stop:
+			return -1
+
 		var next_node = Coord.new()
 
 		if node.prun == 0 and maxl < 5:
@@ -676,6 +686,8 @@ class IdaContext:
 					return 0
 				elif ret >= 2:
 					break
+				elif ret == -1:
+					return ret
 
 		return 1
 
@@ -796,6 +808,7 @@ class StaticContext:
 	var canon_masks2: PackedInt32Array
 	var symurf: Cubie
 	var symurfi: Cubie
+	var should_stop: bool = false
 
 	func _init():
 		movecube.resize(18)
@@ -989,7 +1002,7 @@ class StaticTables:
 		mperm_cperm_prun.resize(N_MPERM * N_PERM_SYM / 8 + 1)
 
 		init(sctx)
-		
+
 		# Export computed tables to JSON file
 		var json_data = export_as_json()
 		var file = FileAccess.open("res://static_tables.json", FileAccess.WRITE)

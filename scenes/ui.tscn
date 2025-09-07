@@ -743,9 +743,10 @@ size_flags_vertical = 3
 theme_override_constants/separation = 10
 
 [node name="MarginContainer6" type="MarginContainer" parent="UI/Footer/SolveControls"]
+custom_minimum_size = Vector2(10, 0)
 layout_mode = 2
-size_flags_horizontal = 3
 size_flags_vertical = 3
+size_flags_stretch_ratio = 0.3
 
 [node name="Prev" type="Button" parent="UI/Footer/SolveControls"]
 layout_mode = 2
@@ -766,7 +767,7 @@ theme_override_styles/disabled = SubResource("StyleBoxFlat_catpy")
 theme_override_styles/hover = SubResource("StyleBoxFlat_wquew")
 theme_override_styles/normal = SubResource("StyleBoxFlat_wquew")
 disabled = true
-text = " Solve"
+text = "Solve"
 icon = ExtResource("8_ktti3")
 script = ExtResource("19_ycmcx")
 
@@ -781,9 +782,10 @@ icon = ExtResource("14_h1mc3")
 script = ExtResource("20_rlppe")
 
 [node name="MarginContainer7" type="MarginContainer" parent="UI/Footer/SolveControls"]
+custom_minimum_size = Vector2(10, 0)
 layout_mode = 2
-size_flags_horizontal = 3
 size_flags_vertical = 3
+size_flags_stretch_ratio = 0.3
 
 [node name="MarginContainer3" type="MarginContainer" parent="UI/Footer"]
 custom_minimum_size = Vector2(0, 90)
